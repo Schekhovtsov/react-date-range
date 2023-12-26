@@ -237,7 +237,8 @@ class Calendar extends PureComponent {
                 <Listbox.Options>
                   {new Array(upperYearLimit - lowerYearLimit + 1)
                     .fill(upperYearLimit)
-                    .reverse.map((val, i) => {
+                    .reverse()
+                    .map((val, i) => {
                       const year = val - i;
                       return (
                         <Listbox.Option key={year} value={year}>
