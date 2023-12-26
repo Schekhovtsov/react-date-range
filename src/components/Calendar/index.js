@@ -191,6 +191,8 @@ class Calendar extends PureComponent {
     const upperYearLimit = (maxDate || Calendar.defaultProps.maxDate).getFullYear();
     const lowerYearLimit = (minDate || Calendar.defaultProps.minDate).getFullYear();
     const styles = this.styles;
+    const currentMonthName = this.state.monthNames.find((month, i) => i === focusedDate.getMonth());
+
     return (
       <div onMouseUp={e => e.stopPropagation()} className={styles.monthAndYearWrapper}>
         {showMonthArrow ? (
@@ -209,7 +211,7 @@ class Calendar extends PureComponent {
                 value={focusedDate.getMonth()}
                 onChange={e => changeShownDate(e, 'setMonth')}>
                 <Listbox.Button>
-                  <span>{focusedDate.getMonth()}</span>
+                  <span>{currentMonthName}</span>
                   <div className="chevron"></div>
                 </Listbox.Button>
                 <Listbox.Options>
