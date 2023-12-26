@@ -232,16 +232,16 @@ class Calendar extends PureComponent {
                 onChange={e => changeShownDate(e, 'setYear')}>
                 <Listbox.Button>
                   <span>{focusedDate.getFullYear()}</span>
-                  <div className="chevron"></div>
+                  <div className="arrow"></div>
                 </Listbox.Button>
                 <Listbox.Options>
                   {new Array(upperYearLimit - lowerYearLimit + 1)
                     .fill(upperYearLimit)
-                    .map((val, i) => {
+                    .reverse.map((val, i) => {
                       const year = val - i;
                       return (
                         <Listbox.Option key={year} value={year}>
-                          {year}
+                          <span>{year}</span>
                         </Listbox.Option>
                       );
                     })}

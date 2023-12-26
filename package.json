@@ -1,6 +1,6 @@
 {
   "name": "react-date-range-headless",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React component for choosing dates and date ranges.",
   "main": "dist/index.js",
   "publishConfig": {
@@ -21,22 +21,16 @@
     "date",
     "range",
     "datepicker",
-    "rangepicker"
+    "rangepicker",
+    "headlessui"
   ],
   "contributors": [
-    "Burak Can <neoberg@gmail.com> (https://github.com/burakcan)",
-    "Mehmet Kamil Morcay <mehmetmorcay@gmail.com> (https://github.com/mkg0)",
-    "Kamyar Ghasemlou <github@kamy.me> (https://github.com/kamyar)",
-    "Engin Semih Basmacı <semih.basmaci@gmail.com> (https://github.com/mortargrind)",
-    "Onur Kerimov <onurkerimov@gmail.com> (https://github.com/onurkerimov)"
+    "Schekhovtsov Sergey <schekhovtsov@gmail.com> (https://github.com/schekhovtsov)"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/hypeserver/react-date-range"
-  },
-  "bugs": {
-    "url": "http://github.com/hypeserver/react-date-range/issues"
+    "url": "https://github.com/Schekhovtsov/react-date-range-headless"
   },
   "browserslist": [
     "defaults"
