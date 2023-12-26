@@ -212,7 +212,7 @@ class Calendar extends PureComponent {
                 onChange={e => changeShownDate(e, 'setMonth')}>
                 <Listbox.Button>
                   <span>{currentMonthName}</span>
-                  <div className="chevron"></div>
+                  <div className="arrow"></div>
                 </Listbox.Button>
                 <Listbox.Options>
                   {this.state.monthNames.map((monthName, i) => {
