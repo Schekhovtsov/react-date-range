@@ -30,6 +30,7 @@ import {
 import defaultLocale from 'date-fns/locale/en-US';
 import coreStyles from '../../styles';
 import { ariaLabelsShape } from '../../accessibility';
+import { Listbox } from '@headlessui/react';
 
 class Calendar extends PureComponent {
   constructor(props, context) {
@@ -204,34 +205,46 @@ class Calendar extends PureComponent {
         {showMonthAndYearPickers ? (
           <span className={styles.monthAndYearPickers}>
             <span className={styles.monthPicker}>
-              <select
+              <Listbox
                 value={focusedDate.getMonth()}
-                onChange={e => changeShownDate(e.target.value, 'setMonth')}
-                aria-label={ariaLabels.monthPicker}>
-                {this.state.monthNames.map((monthName, i) => (
-                  <option key={i} value={i}>
-                    {monthName}
-                  </option>
-                ))}
-              </select>
+                onChange={e => changeShownDate(e, 'setMonth')}>
+                <Listbox.Button>
+                  <span>{focusedDate.getMonth()}</span>
+                  <div className="chevron"></div>
+                </Listbox.Button>
+                <Listbox.Options>
+                  {this.state.monthNames.map((monthName, i) => {
+                    return (
+                      <Listbox.Option key={i} value={i}>
+                        {monthName}
+                      </Listbox.Option>
+                    );
+                  })}
+                </Listbox.Options>
+              </Listbox>
             </span>
             <span className={styles.monthAndYearDivider} />
             <span className={styles.yearPicker}>
-              <select
+              <Listbox
                 value={focusedDate.getFullYear()}
-                onChange={e => changeShownDate(e.target.value, 'setYear')}
-                aria-label={ariaLabels.yearPicker}>
-                {new Array(upperYearLimit - lowerYearLimit + 1)
-                  .fill(upperYearLimit)
-                  .map((val, i) => {
-                    const year = val - i;
-                    return (
-                      <option key={year} value={year}>
-                        {year}
-                      </option>
-                    );
-                  })}
-              </select>
+                onChange={e => changeShownDate(e, 'setYear')}>
+                <Listbox.Button>
+                  <span>{focusedDate.getFullYear()}</span>
+                  <div className="chevron"></div>
+                </Listbox.Button>
+                <Listbox.Options>
+                  {new Array(upperYearLimit - lowerYearLimit + 1)
+                    .fill(upperYearLimit)
+                    .map((val, i) => {
+                      const year = val - i;
+                      return (
+                        <Listbox.Option key={year} value={year}>
+                          {year}
+                        </Listbox.Option>
+                      );
+                    })}
+                </Listbox.Options>
+              </Listbox>
             </span>
           </span>
         ) : (
@@ -493,7 +506,7 @@ class Calendar extends PureComponent {
               isVertical ? this.styles.monthsVertical : this.styles.monthsHorizontal
             )}>
             {new Array(this.props.months).fill(null).map((_, i) => {
-              let monthStep = addMonths(this.state.focusedDate, i);;
+              let monthStep = addMonths(this.state.focusedDate, i);
               if (this.props.calendarFocus === 'backwards') {
                 monthStep = subMonths(this.state.focusedDate, this.props.months - 1 - i);
               }
