@@ -218,7 +218,7 @@ class Calendar extends PureComponent {
                   {this.state.monthNames.map((monthName, i) => {
                     return (
                       <Listbox.Option key={i} value={i}>
-                        {monthName}
+                        <span>{monthName}</span>
                       </Listbox.Option>
                     );
                   })}
