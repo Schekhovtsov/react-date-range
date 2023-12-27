@@ -1,7 +1,7 @@
 {
   "name": "react-date-range-headless",
-  "version": "1.0.7",
-  "description": "A React component for choosing dates and date ranges.",
+  "version": "1.0.8",
+  "description": "A React component for choosing dates and date ranges. A fork of hypeserver/react-date-range in which the Headless UI Listbox (Select) uses instead html select and options",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public",
