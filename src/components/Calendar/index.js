@@ -31,6 +31,7 @@ import defaultLocale from 'date-fns/locale/en-US';
 import coreStyles from '../../styles';
 import { ariaLabelsShape } from '../../accessibility';
 import { Listbox } from '@headlessui/react';
+import arrow from './icon.svg';
 
 class Calendar extends PureComponent {
   constructor(props, context) {
@@ -212,7 +213,7 @@ class Calendar extends PureComponent {
                 onChange={e => changeShownDate(e, 'setMonth')}>
                 <Listbox.Button>
                   <span>{currentMonthName}</span>
-                  <div className="arrow"></div>
+                  <img className="arrow" src={arrow} alt="expandArrow" />
                 </Listbox.Button>
                 <Listbox.Options>
                   {this.state.monthNames.map((monthName, i) => {
@@ -232,7 +233,7 @@ class Calendar extends PureComponent {
                 onChange={e => changeShownDate(e, 'setYear')}>
                 <Listbox.Button>
                   <span>{focusedDate.getFullYear()}</span>
-                  <div className="arrow"></div>
+                  <img className="arrow" src={arrow} alt="expandArrow" />
                 </Listbox.Button>
                 <Listbox.Options>
                   {new Array(upperYearLimit - lowerYearLimit + 1)
