@@ -1,6 +1,6 @@
 {
   "name": "react-date-range-headless",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "A React component for choosing dates and date ranges. A fork of hypeserver/react-date-range in which the Headless UI Listbox (Select) uses instead html select and options",
   "main": "dist/index.js",
   "publishConfig": {
@@ -11,7 +11,7 @@
     "start": "yarn build:css & styleguidist server",
     "build": "yarn build:css & yarn build:js",
     "build:css": "postcss src/styles.scss -d dist --ext css & postcss src/theme/*.scss -d dist/theme --ext css",
-    "build:js": "babel ./src --out-dir ./dist --ignore test.js",
+    "build:js": "babel ./src --out-dir ./dist --ignore test.js --copy-files",
     "lint": "eslint 'src/**/*.js'",
     "test": "jest",
     "preversion": "yarn clear & yarn build"
@@ -57,6 +57,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-date-fns": "^2.0.0",
+    "babel-plugin-inline-react-svg": "^2.0.2",
     "css-loader": "^3.2.0",
     "date-fns": "^2.8.1",
     "enzyme": "^3.11.0",
