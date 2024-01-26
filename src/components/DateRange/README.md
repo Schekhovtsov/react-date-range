@@ -4,6 +4,7 @@ This component extends all the props of **[Calendar](#calendar)** component. In 
 |---|---|
 |  **moveRangeOnFirstSelection** |  boolean |
 |  **retainEndDateOnFirstSelection** |  boolean |
+|  **disableReverseDates** |  boolean |
 |  **onRangeFocusChange** |  function |
 |  **rangeColors**  |  array |
 |  **ranges**  |  array |

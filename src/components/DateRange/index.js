@@ -24,6 +24,7 @@ class DateRange extends Component {
       maxDate,
       moveRangeOnFirstSelection,
       retainEndDateOnFirstSelection,
+      disableReverseDates,
       disabledDates,
     } = this.props;
     const focusedRangeIndex = focusedRange[0];
@@ -60,9 +61,12 @@ class DateRange extends Component {
 
     // reverse dates if startDate before endDate
     let isStartDateSelected = focusedRange[1] === 0;
-    if (isBefore(endDate, startDate)) {
-      isStartDateSelected = !isStartDateSelected;
-      [startDate, endDate] = [endDate, startDate];
+
+    if (!disableReverseDates) {
+      if (isBefore(endDate, startDate)) {
+        isStartDateSelected = !isStartDateSelected;
+        [startDate, endDate] = [endDate, startDate];
+      }
     }
 
     const inValidDatesWithinRange = disabledDates.filter(disabledDate =>
@@ -152,6 +156,7 @@ DateRange.defaultProps = {
   retainEndDateOnFirstSelection: false,
   rangeColors: ['#3d91ff', '#3ecf8e', '#fed14c'],
   disabledDates: [],
+  disableReverseDates: false,
 };
 
 DateRange.propTypes = {
@@ -162,6 +167,7 @@ DateRange.propTypes = {
   ranges: PropTypes.arrayOf(rangeShape),
   moveRangeOnFirstSelection: PropTypes.bool,
   retainEndDateOnFirstSelection: PropTypes.bool,
+  disableReverseDates: PropTypes.bool,
 };
 
 export default DateRange;
