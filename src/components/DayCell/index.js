@@ -101,12 +101,15 @@ class DayCell extends Component {
       (!startDate || isAfter(day, startDate)) && (!endDate || isBefore(day, endDate));
     const isStartEdge = !isInRange && isSameDay(day, startDate);
     const isEndEdge = !isInRange && isSameDay(day, endDate);
+    const isDaySecondLessFirst = endDate < startDate;
+
     return (
       <span
         className={classnames({
           [styles.dayStartPreview]: isStartEdge,
           [styles.dayInPreview]: isInRange,
           [styles.dayEndPreview]: isEndEdge,
+          [styles.daySecondLessFirst]: isDaySecondLessFirst,
         })}
         style={{ color: preview.color }}
       />

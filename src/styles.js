@@ -27,6 +27,7 @@ export default {
   dayEndPreview: 'rdrDayEndPreview',
   dayHovered: 'rdrDayHovered',
   dayActive: 'rdrDayActive',
+  daySecondLessFirst: 'daySecondLessFirst',
   inRange: 'rdrInRange',
   endEdge: 'rdrEndEdge',
   startEdge: 'rdrStartEdge',

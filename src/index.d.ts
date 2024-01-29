@@ -73,6 +73,7 @@ export interface ClassNames {
     dayStartPreview?: string | undefined;
     dayInPreview?: string | undefined;
     dayEndPreview?: string | undefined;
+    daySecondLessFirst?: string | undefined;
     dayHovered?: string | undefined;
     dayActive?: string | undefined;
     inRange?: string | undefined;
