@@ -18,9 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## 1.2.2
 
 ### Added
-- `onHoverDate` prop: return hovered day in calendar, without redefining onPreviewChange prop logic
+- `onHoverDate` prop for `<DateRange ... />` component: return hovered day in calendar, without redefining `onPreviewChange` prop logic
 
 ## 1.2.0
 
 ### Added
-- `disableReverseDates` prop: disable reverse dates in DateRange component, when end date less than start date (Default: `false`)
+- `disableReverseDates` prop for `<DateRange ... />` component: disable reverse dates in DateRange component, when end date less than start date (Default: `false`)
