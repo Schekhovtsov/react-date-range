@@ -499,6 +499,7 @@ class Calendar extends PureComponent {
                       }
                       showMonthName
                       showWeekDays={!isVertical}
+                      onHoverDate={this.props.onHoverDate}
                     />
                   );
                 }}
@@ -535,6 +536,7 @@ class Calendar extends PureComponent {
                   styles={this.styles}
                   showWeekDays={!isVertical || i === 0}
                   showMonthName={!isVertical || i > 0}
+                  onHoverDate={this.props.onHoverDate}
                 />
               );
             })}
@@ -578,6 +580,7 @@ Calendar.defaultProps = {
   calendarFocus: 'forwards',
   preventSnapRefocus: false,
   ariaLabels: {},
+  onHoverDate: () => {},
 };
 
 Calendar.propTypes = {
@@ -634,6 +637,7 @@ Calendar.propTypes = {
   calendarFocus: PropTypes.string,
   preventSnapRefocus: PropTypes.bool,
   ariaLabels: ariaLabelsShape,
+  onHoverDate: PropTypes.func,
 };
 
 export default Calendar;
